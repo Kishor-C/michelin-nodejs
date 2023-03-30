@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Inheritance in Javascript</h2>
+    <script>
+        class User {
+            constructor(name, gender) {
+                this.name = name;
+                this.gender = gender;
+            }
+            display() {
+                console.log(`Name = ${this.name}, Gender = ${this.gender}`);
+            }
+        }
+        class Employee extends User {
+            constructor(id, name, gender, salary) {
+                // super() must be the very first line 
+                super(name, gender); // this.name & this.gender will be initialized
+                this.id = id;
+                this.salary = salary;
+            }
+            display() {
+                console.log(`Id = ${this.id}, Name = ${this.name}, Gender = ${this.gender}, Salary = ${this.salary}`)
+            }
+        }
+        class Student extends User {
+            constructor(rollNo, name, gender, grades) {
+                // super() must be the very first line 
+                super(name, gender); // this.name & this.gender will be initialized
+                this.rollNo = rollNo;
+                this.grades = grades;
+            }
+            display() {
+                console.log(`RollNo = ${this.rollNo}, Name = ${this.name}, Gender = ${this.gender}, Grades = ${this.grades}`)
+            }
+        }
+        function printInfo(x) {
+            x.display(); // polymorphic - single method performs 3 different actions
+        }
+        
+        let e = new Employee(234, "Raj", "Male", 42000);
+        let s = new Student(888, "Vijay", "Male", "A");
+        let u = new User("Charles", "Male");
+        
+        printInfo(e); // call by reference - e = x.display() = e.display() // x = e.display()
+        printInfo(s); // x = s; x.display() = s.display()
+        printInfo(u); // x = u; x.display() = u.display();
+        
+    </script>
+</body>
+</html>

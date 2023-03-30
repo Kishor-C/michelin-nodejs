@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Form Validations</h2>
+    <!-- submits the data if its gets true else doesnt submit -->
+    <form onsubmit="return validate()" action = "http://www.google.com">
+        <div>
+            Username <input type = "text" name = "n1" id = "i1">
+        </div>
+        <div>
+            Password <input type = "password" name = "n2" id = "i2">
+        </div>
+        <div>
+            Gender <input type = "radio" name = "n3" value = "M">MALE
+                    <input type = "radio" name = "n3" value = "F">FEMALE
+        </div>
+        <div>
+            <input type = "submit" value = "Login">
+        </div>
+    </form>
+    <script>
+        function validate() {
+            // you can access using document.getElementById
+            // you can access using document.form.inputName
+            var un = document.forms[0].n1; // form.n1
+            var pw = document.forms[0].n2; // form.n2
+            var gender = document.forms[0].n3; // gender[input, input]
+            console.log(un);
+            if(un.value.length == 0) {
+                alert('Username cannot be empty'); 
+                un.focus();
+                return false;
+            }
+            if(pw.value.length == 0) {
+                alert('Password cannot be empty'); 
+                pw.focus();
+                return false;
+            }
+            var status = false;
+            for(var i = 0; i < gender.length; i++) {
+                if(gender[i].checked) {
+                    status = true;
+                    break;
+                }
+            }
+            if(status == false) {
+                alert('Gender must be selected');
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

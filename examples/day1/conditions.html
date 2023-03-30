@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Learning Conditional Blocks</h2>
+    <script>
+        function printResult(marks) {
+            document.write('<p>Result is</p>')
+            // if doesn't need { } if its one line statement
+            if(marks >= 80) { 
+                document.write('<p>Marks scored is FCD</p>');
+            } else if (marks >= 70 && marks < 80) {
+                document.write('<p>Marks scored is FC</p>');
+            } else if (marks >= 60 && marks < 70) {
+                document.write('<p>Marks scored is SC</p>');
+            } else {
+                document.write('<p>Marks scored is just pass<p>')
+            }
+        }
+        printResult(90);
+        printResult(60);
+        printResult(55);
+        function optionValues(choice) {
+            document.write('<p>Selected choice: '+choice+'</p>');
+            switch(choice) {
+                case 1: document.write('case1 is for withdraw'); break;
+                case 2: document.write('case2 is for check balance'); break;
+                case 3: document.write('case 3 is for statements'); break;
+                default: document.write('default case is matched');
+            }
+        }
+        optionValues(3);
+        optionValues(0);
+        i = 10;
+        j = "10";
+        k = 10;
+        document.write('<h2>Understanding types of ==, === operators</h2>');
+        document.write('<p>i = '+i+', j = '+j+', k = '+k+'</p>');
+        document.write('<p>typeof(i): '+typeof(i)+', typeof(j): '+typeof(j)+'</p>');
+        document.write('<p>i==j: '+(i == j)+'</p>');
+        document.write('<p>i===j: '+(i === j)+'</p>');
+        document.write('<p>i===k: '+(i === k)+'</p>');
+        document.write('<p>2 % 3 = '+(2 % 3)+'</p>');
+        document.write('<p>3 % 2 = '+(3 % 2)+'</p>');
+        document.write('<p>3 % 3 = '+(3 % 3)+'</p>');
+        // using prompts 
+        function promptValues() {
+            var balance = 15000;
+            var amount = prompt('Enter amount: ');
+            // since prompt returns string, we need to convert string to number
+            var result = balance + parseFloat(amount);
+            var result2 = balance - amount; // need to convert only while adding
+            document.write('<p>Balance Result = '+result+'</p>');
+            document.write('<p>Balance Result2 = '+result2+'</p>');
+            var b1 = "25.23";
+            var b2 = parseInt(b1);
+            var b3 = parseFloat(b1);
+            document.write('<p>b1 = '+b1+', b2 = '+b2+', b3 = '+b3+'</p>');
+        }
+        promptValues();
+    </script>
+</body>
+</html>

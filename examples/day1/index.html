@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Fundamentals of Javascript</h2>
+    <script>
+        var username = "Kishor";
+        var phone = 999990;
+        // alert, console, document object
+        //alert('Name = '+username+', phone = '+phone);
+        var counter1 = 15;
+        var counter2 = 15;
+        var x = ++counter1;
+        var y = counter2++;
+        // documente.write(...);
+        document.write('<p>counter1 = '+counter1+', x = '+x+'</p>');
+        document.write('<p>counter2 = '+counter2+', y = '+y+'</p>');
+        var counter3 = 15;
+        document.write('<p>counter3 = '+(counter3++)+'</p>');
+        document.write('<p>counter3 = '+counter3+'</p>');
+        function test1(a, b) {
+            document.write('test1 is called');
+            document.write('<p>a = '+a+', b = '+b+'</p>');
+        }
+        test1('hello', 'world');
+        test1();
+        
+    </script>
+</body>
+</html>

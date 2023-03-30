@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Arrow functions demo</h2>
+    <script>
+        let x = 20;
+        let items = [ 2, 4, 6, 5, 1 ];
+        // forEach(callback(item, index))
+        // the callback of forEach is synchronous
+        items.forEach(function(item, index) {
+            console.log(`index = ${index}, key = ${item}`);
+        });
+        console.log('**********Arrow function does the same********');
+        items.forEach((item, index) => console.log(`index = ${index}, key = ${item}`));
+        // map(callback(item, index)): it is to iterate an array & return a new array
+        let anotherItems = items.map(function(item, index){
+            return item + (item * 0.18);
+        });
+        console.log(items);
+        console.log(anotherItems);
+        // we can use arrow functions in map also
+        let someMoreItems = items.map((item, index) => item + (item * 0.09));
+        console.log(someMoreItems);
+        let str = "1234;4567;8888;9999";
+        let strSplit = str.split(';'); // strSplit = ["1234", "4567", "8888", "9999"]
+        strSplit.forEach((item, index) => console.log(item));
+        // filter creates a new array with the iterated elements that passes the condition
+        let oddItems = items.filter((item, index) => item % 2 == 1);
+        let evenItems = items.filter((item, index) => item % 2 == 0)
+        console.log(items);
+        console.log(oddItems);
+        console.log(evenItems);
+        let sortedItemsAsc = items.sort((a, b) => a - b);
+        console.log(sortedItemsAsc);
+        let sortedItemsDesc = items.sort((a, b) => b - a);
+        console.log(sortedItemsDesc);
+        // object arrays
+        let employees = [
+            {id:1, name:"Alex", salary:30000}, 
+            {id:2, name:"Bruce", salary:25000},
+            {id:3, name:"Charles", salary:50000}
+        ];
+        console.log(`Length: ${employees.length}`);
+        employees.forEach((item, index) => { if(item.salary > 30000) { console.log(item) }});
+        console.log('***************************')
+       employees.forEach((item, index) => 
+         console.log(`Id = ${item.id}, Name = ${item.name}, Salary = ${item.salary}`));
+        // max value of items [2, 4, 6, 5, 1]
+        items =  [2, 4, 6, 5, 1];
+        let max = items.reduce((p, c) => p > c ? p : c); // reduces to a single value having max
+        console.log(`Items: ${items}`)
+        console.log(`Max: ${max}`);
+        console.log('Filtering employees salary > 30000');
+        let employeesFilter = employees.filter((item, index) => item.salary >= 30000);
+        console.log(employeesFilter);
+        // use reduce to get employee who has maximum salary
+    </script>
+</body>
+</html>

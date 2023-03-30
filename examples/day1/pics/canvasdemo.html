@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id = "c1" width="400" height="400" style="border:2px solid"></canvas>
+    <canvas id = "c2" width="400" height="400" style="border:2px solid"></canvas>
+    <script>
+        var ele = document.getElementById('c1').getContext('2d');
+        ele.fillStyle = 'green';
+        ele.fillRect(10, 10, 40, 40); // fillRect(x, y, w, h)
+        ele.strokeRect(10, 10, 40, 40);
+        // you can use beginPath() while drawing an arc(x, y, r, start, end, boolean);
+        ele.beginPath();
+        ele.arc(100, 100, 40, 0, Math.PI);
+        ele.fillStyle = 'red';
+        ele.fill();
+        ele.strokeStyle = 'black';
+        ele.stroke();
+        //creating a chess box
+        var ele2 = document.getElementById('c2').getContext('2d');
+        for(var x = 0; x < 8; x++) {
+            for(var y = 0; y < 8; y++) {
+                if( ( x + y) % 2 == 0) { // x = 0, y = 2, result = 0
+                    ele2.fillStyle = 'black';
+                    ele2.fillRect(x * 50, y * 50, 50, 50); // 0, 0, 50, 50
+                }
+            }
+        }
+        var colors = ["violet", "indigo", "blue", "green", "yellow", "orange", "red"];
+    </script>
+</body>
+</html>

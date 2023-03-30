@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Understanding Callbacks with XMLHttpRequest</h2>
+    <input type = "number" id = "i1">
+    <button onclick = "fetchUser()">Search</button>
+    <div id = "d1"></div>
+    <script>
+        function fetchUser() {
+            // get the value from the input box
+            var id = document.getElementById('i1').value;
+            // create XMLHttpRequest object to send request - HTTP : get, post, put, delete
+            var xhr = new XMLHttpRequest();
+            // initiate the request by url, http method using xhr.open(method, url)
+            xhr.open("get", "https://jsonplaceholder.typicode.com/users/"+id);
+            // send request using xhr.send();
+            xhr.send();
+            // onreadystatechange is an event handler 
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState == 4) {
+                    // use JSON.parse() to convert json to js object
+                    var responseData = xhr.responseText; // gives the response data
+                    var jsData = JSON.parse(responseData); // converts to JS object
+                    var ele = document.getElementById('d1');
+                    ele.innerHTML = "Hello "+jsData.name+", Street is: "+jsData.address.street;
+                }
+            }
+            // synchrnous code will come below function
+            console.log('------some code------')
+        }
+    </script>
+</body>
+</html>

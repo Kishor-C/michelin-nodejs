@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Understanding loops</h2>
+    <script>
+        // for loop repeatedly executes the statements until the 
+        // conditions become false, used for fixed set of iterations
+        for(var i = 0; i < 5; i++) {
+            document.write('<p>i = '+i+"</p>"); // 0, 1, 2, 3, 4
+        }
+        document.write('<p>_______________</p>')
+        for(var i = 0; i < 5; i = i+2) {
+            document.write('<p>i = '+i+"</p>"); // 0, 2, 4
+        }
+        // while loop - use until some condition becomes false
+        var counter = 0;
+        document.write('<p>While loop</p>')
+        while(counter < 5) {
+            document.write('<p>Counter = '+counter+'</p>');
+            counter++;
+        }
+        document.write('<p>Do While loop</p>')
+        do {
+            document.write('<p>Counter = '+counter+'</p>');
+            counter++;
+        } while(counter < 5);
+        var items = [8, 1, 9, 5, 3];
+        document.write('<p>Array size: '+items.length+'</p>');
+        for(var i = 0; i < items.length; i++) {
+            document.write('<p>items[i] = '+items[i]+', position: '+i+'</p>')
+        }
+        document.write('<p>Ternary operator</p>');
+        var a = 30;
+        var b = 20;
+        document.write('Result = '+((a > b) ? a : b) + '<br />');
+        document.write(a > b ? 'a is greater than b' : 'a is not greater than b')
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Padding Demo</h2>
+    <script>
+        let str = "77939";
+        let padding1 = str.padStart(6, '0');
+        let padding2 = str.padEnd(6, '0');
+        document.write(`<p>Padding1: ${padding1}</p>`);
+        document.write(`<p>Padding2: ${padding2}</p>`);
+        // always generate OTP of 6 digits
+        let random = Math.random();
+        let otp = Math.ceil(random * 1000000) // 7.6 = 8
+        // convert otp to string & apply pad start
+        otp = otp + '';
+        if(otp.length != 6) {
+            otp = otp.padStart(6, '0')
+        }
+        document.write(`<p>Random number: ${random}</p>`);
+        document.write(`<p>OTP: ${otp}</p>`)
+        // pass the email id from the prompt and add **** before @ and display the string 
+        // ex: alex456@gmail.com must print ale****@gmail.com
+    </script>
+</body>
+</html>

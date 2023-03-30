@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>DOM Operations</h2>
+    <div>
+        Number1 <input type = 'number' id = 'n1'> 
+        Number2 <input type = 'number' id = 'n2'>
+        <br />
+        Result <input type = 'number' disabled id = 'n3'>
+        <hr />
+        <button onclick = 'add()'>Add</button> 
+        <button onclick = 'sub()'>Sub</button>
+    </div>
+    <script>
+        var num1, num2, result;
+        function read() {
+           num1 = document.getElementById('n1').value;
+           num2 = document.getElementById('n2').value;
+           result = document.getElementById('n3'); // result is an element object
+           result.style.backgroundColor = 'yellow';
+        }
+        function addColors() {
+            result.value > 0 ? result.style.color = 'green' : result.style.color = 'red';
+            console.log(result.style.color);
+        }
+        function add() {
+            read();
+            result.value = parseFloat(num1) + parseFloat(num2);
+            addColors();
+        }
+        function sub() {
+            read();
+            result.value = num1 - num2;
+            addColors();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Promise and Fetch Demo</h2>
+    <div>
+        <input type = 'number' id = 'i1'>
+        <button onclick = 'fetchJson()'>Search</button>
+    </div>
+    <div id = 'd1'></div>
+    <script>
+        function fetchJson() {
+            let id = document.getElementById('i1').value;
+            let ele = document.getElementById('d1');
+            let url = `https://jsonplaceholder.typicode.c/${id}`;
+
+            fetch(url).then(response => response.json())
+            .catch(er => console.log('ERR****'+er))
+            .then(value => 
+            ele.innerHTML = `<p>Hi ${value.name}, your email is ${value.email}</p>`)
+        }
+        // function(response) { function (value) { } }
+    </script>
+</body>
+</html>

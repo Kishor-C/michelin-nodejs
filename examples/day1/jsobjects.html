@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Javascript object</h2>
+    <script>
+        function User(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        // adding function to the User object using prototype
+        User.prototype.printInfo = function() {
+            document.write('<p>Name = '+this.name+', Age = '+this.age+'</p>');
+        }
+        var a1 = new User('Raj', 35); // [name = Raj, age = 35]
+        var a2 = new User('Vijay', 30); // [name = Vijay, age = 30]
+        a1.printInfo(); //a1.name & a1.age 
+        a2.printInfo(); //a2.name & a2.age
+    </script>
+</body>
+</html>

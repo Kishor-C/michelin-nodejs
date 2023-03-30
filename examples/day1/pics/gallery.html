@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src = '/pics/sky.jpg' width = '300' height = '300' id = 'i1'>
+    <div onclick = 'changeImage(event)'>
+        <img src = '/pics/sea.jpg' width = '100' height = '100'>
+        <img src = '/pics/sky.jpg' width = '100' height = '100'>
+        <img src = '/pics/stones.jpg' width = '100' height = '100'>
+        <img src = '/pics/wind.jpg' width = '100' height = '100'>
+        <img src = '/pics/sweethome.jpg' width = '100' height = '100'>
+    </div>
+    <script>
+        function changeImage(ev) {
+           var ele = ev.target;
+           var frame = document.getElementById('i1');
+           if(ele.tagName == 'IMG') {
+            frame.src = ele.src;
+           }
+        }
+    </script>
+</body>
+</html>
