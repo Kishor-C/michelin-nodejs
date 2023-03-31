@@ -6,4 +6,4 @@ let str = data.toString();
 let empString = str.split('|'); // empString = [Raj, 35000]
 console.log(empString);
 let e = new Employee(...empString); 
-e.display();
+e.display(); // {"name":"Raj", "salary":45000}
